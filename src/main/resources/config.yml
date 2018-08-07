@@ -1,0 +1,37 @@
+days_interval: 30
+
+# If you get an error about casting int to double, add ".0" to the end
+percentage_tax: 20.0
+
+# Command:
+# /tax - Permission: monthlytax.command
+
+# Placeholders registered under: "monthlytax"
+## Player placeholders:
+# last_tax: The last amount the player was taxed
+## Server placeholders:
+# last_total_tax: The last total amount the server was taxed
+# tax_percentage: The percentage tax to take set in the config
+# next_collection: The next time tax will be collected
+
+# The format to display the next_collection placeholder in
+# d: day
+# M: month
+# y: year
+# H: hour
+# m: minute
+# s: second
+date_format: "dd/MM/yyyy HH:mm:ss"
+
+messages:
+  # Valid placeholders:
+  # %old_balance% - The player's balance before tax was collected
+  # %new_balance% - The player's balance after tax was collected
+  # %taken% - The amount of money the player lost after tax collection
+  tax_collected: "&eTax was taken from your account: &c%old_balance% &e-> &c%new_balance% &e(lost %taken%)"
+  command_usage: "&cUsage: /tax <player|all>"
+  player_offline: "&cThat player is not online"
+  collected_tax_all: "&aYou collected tax from all players"
+  collected_tax_player: "&aYou collected tax from player %s" # Args: player name
+  no_permission: "&cYou don't have permission"
+  tax_collected_offline: "&cTax was collected from you while offline and you lost $%taken%"

@@ -1,0 +1,10 @@
+name: MonthlyTax
+version: ${project.version}
+author: Mas281
+
+main: me.itsmas.tax.MonthlyTax
+
+depend: [Vault, PlaceholderAPI]
+
+commands:
+  tax:
