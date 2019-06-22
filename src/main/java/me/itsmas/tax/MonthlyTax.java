@@ -23,7 +23,7 @@ public class MonthlyTax extends JavaPlugin
         taxManager = new TaxManager(this);
         vaultManager = new VaultManager(this);
 
-        new PlaceholderHook(this).hook();
+        new PlaceholderHook(this).register();
         new TaxCommand(this);
 
     }

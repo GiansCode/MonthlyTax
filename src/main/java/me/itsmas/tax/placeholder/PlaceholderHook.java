@@ -1,20 +1,18 @@
 package me.itsmas.tax.placeholder;
 
-import me.clip.placeholderapi.external.EZPlaceholderHook;
+import me.clip.placeholderapi.expansion.PlaceholderExpansion;
 import me.itsmas.tax.MonthlyTax;
 import me.itsmas.tax.util.Logs;
 import org.bukkit.entity.Player;
 
 import java.text.SimpleDateFormat;
 
-public class PlaceholderHook extends EZPlaceholderHook
+public class PlaceholderHook extends PlaceholderExpansion
 {
     private final MonthlyTax plugin;
 
     public PlaceholderHook(MonthlyTax plugin)
     {
-        super(plugin, "monthlytax");
-
         this.plugin = plugin;
 
         try
@@ -23,9 +21,15 @@ public class PlaceholderHook extends EZPlaceholderHook
         }
         catch (Exception ex)
         {
-            Logs.error("Invalid date format in config:");
+            Logs.error("Invalid date format in config");
             ex.printStackTrace();
         }
+    }
+
+    @Override
+    public String getIdentifier()
+    {
+        return "monthlytax";
     }
 
     private SimpleDateFormat format;
@@ -57,5 +61,29 @@ public class PlaceholderHook extends EZPlaceholderHook
         }
 
         return null;
+    }
+
+    @Override
+    public String getAuthor()
+    {
+        return plugin.getDescription().getAuthors().get(0);
+    }
+
+    @Override
+    public String getVersion()
+    {
+        return plugin.getDescription().getVersion();
+    }
+
+    @Override
+    public boolean persist()
+    {
+        return true;
+    }
+
+    @Override
+    public boolean canRegister()
+    {
+        return true;
     }
 }

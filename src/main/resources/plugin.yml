@@ -2,9 +2,9 @@ name: MonthlyTax
 version: ${project.version}
 author: Mas281
 
-main: me.itsmas.tax.MonthlyTax
-
 depend: [Vault, PlaceholderAPI]
+main: me.itsmas.tax.MonthlyTax
+api-version: 1.14
 
 commands:
   tax:
